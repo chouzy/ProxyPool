@@ -4,7 +4,7 @@ from os.path import dirname, abspath, join
 from environs import Env
 
 env = Env()
-env.read_env()
+env.read_env()  # 读取文件
 
 # 判断操作系统
 IS_WINDOWS = platform.system().lower() == 'windows'
@@ -33,13 +33,13 @@ SCORE_MIN = 0
 SCORE_INIT = 10
 
 # 设置代理池数量
-NUMBER_MAX = 50000
+NUMBER_MAX = 5000
 NUMBER_MIN = 0
 
 # 代理测试 URL
 TEST_URL = env.str('TEST_URL', 'http://www.baidu.com')
 TEST_TIMEOUT = env.int('TEST_TIMEOUT', 10)
-TEST_BATCH = env.int('TEST_BATCH', 20)
+TEST_BATCH = env.int('TEST_BATCH', 20)  # 测试批次
 
 # 每次测试代理的时间间隔
 CYCLE_TESTER = env.int('CYCLE_TESTER', 20)
@@ -47,7 +47,7 @@ CYCLE_TESTER = env.int('CYCLE_TESTER', 20)
 CYCLE_GETTER = env.int('CYCLE_GETTER', 100)
 GET_TIMEOUT = env.int('GET_TIMEOUT', 10)
 
-# 配置接口信息
+# 配置 API 接口信息
 API_HOST = env.str('API_HOST', '127.0.0.1')
 API_PORT = env.int('API_PORT', 5000)
 

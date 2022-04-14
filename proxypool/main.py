@@ -5,9 +5,9 @@ from loguru import logger
 
 from config.setting import IS_WINDOWS, START_TESTER, START_GETTER, START_SERVER, CYCLE_TESTER, CYCLE_GETTER, API_HOST, \
     API_PORT
+from proxypool.service.getter import Getter
 from proxypool.service.server import app
 from proxypool.service.tester import Tester
-from proxypool.spiders.public.kuaidaili import KuaidailiSpider
 
 if IS_WINDOWS:
     multiprocessing.freeze_support()
@@ -46,7 +46,7 @@ class ProxyPoolMain(object):
         if not START_GETTER:
             logger.info('getter not enabled, exit')
             return
-        getter = KuaidailiSpider()
+        getter = Getter()
         loop = 0
         while True:
             logger.debug(f'getter loop {loop} start...')
