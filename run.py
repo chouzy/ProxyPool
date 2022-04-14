@@ -8,7 +8,7 @@ import argparse
 from proxypool.main import ProxyPoolMain
 
 parser = argparse.ArgumentParser(description='ProxyPool')
-parser.add_argument('--processor', type=str, help='you can choose one from tester, getter and server')
+parser.add_argument('--run', type=str, help='you can choose one from tester, getter and server')
 args = parser.parse_args()
 
 if __name__ == '__main__':
